@@ -121,6 +121,9 @@ if __name__ == '__main__':
         true_SoC.append(battery_simulation.state_of_charge)
         estim_SoC.append(Kf.x[0,0])
         
+        # print(time[-1], battery_simulation.state_of_charge, Kf.x[0, 0],
+        #       mes_voltage[-1], battery_simulation.voltage)
+
         return battery_simulation.voltage #mes_voltage[-1]
     
     # launch experiment
