@@ -57,10 +57,10 @@ if __name__ == '__main__':
     time_step = 10 #s
     cut_off_voltage = 2.5
 
-
     current = capacity*discharge_rate
     my_battery = Battery(capacity, 0.062, 0.01, 3000)
     my_battery.current = current
+    print(f"Current: {my_battery.current}")    
     
     time = [0]
     SoC = [my_battery.state_of_charge]
@@ -75,7 +75,11 @@ if __name__ == '__main__':
         OCV.append(my_battery.OCV)
         RC_voltage.append(my_battery._RC_voltage)
         voltage.append(my_battery.voltage)
-        # print(time[-1], my_battery.state_of_charge, my_battery._OCV, my_battery.voltage)
+        # print(f"Soc: {my_battery.state_of_charge}")
+        # print(f"OCV: {my_battery.OCV}")
+        # print(f"Voltage: {my_battery.voltage}")
+        # print(f"RC Voltage: {my_battery._RC_voltage}")
+        print(time[-1], my_battery.state_of_charge, my_battery.OCV, my_battery.voltage)
 
     import matplotlib.pyplot as plt
 
